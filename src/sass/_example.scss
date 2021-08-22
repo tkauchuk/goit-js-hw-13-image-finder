@@ -9,7 +9,9 @@ img {
   height: 400px;
   object-fit: cover;
 }
-
+body {
+  padding-top: 20px;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -25,7 +27,9 @@ img {
 }
 .stats {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 2px;
 }
 .stats-item {
   display: flex;
@@ -38,4 +42,10 @@ img {
 
 .material-icons {
   margin-right: 5px;
+}
+.search-form {
+  margin-bottom: 20px;
+}
+.modal-button {
+  cursor: pointer;
 }

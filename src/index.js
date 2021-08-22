@@ -22,6 +22,8 @@ refs.query = document.querySelector('input');
 refs.query.addEventListener('input', debouncedOnInput);
 
 refs.button = document.querySelector('.modal-button');
+refs.button.addEventListener('click', onClick);
+
 refs.button.disabled = true;
 
 const BASE_URL = 'https://pixabay.com/api/?image_type=photo&orientation=horizontal';
@@ -42,13 +44,12 @@ function onInput(event) {
         .then(response => response.json())
         .then(({ hits }) => {
             const galleryMarkup = galleryItemsTemplate(hits);
-            refs.gallery.insertAdjacentHTML('beforeend', galleryMarkup);
+            refs.gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
             refs.button.disabled = false;
         }
     );
 }
-
-refs.button.addEventListener('click', () => {
+function onClick() {
     page += 1;
     fetch(`${BASE_URL}&q=${request}&page=${page}&per_page=12&key=${API_KEY}`)
         .then(response => response.json())
@@ -60,7 +61,6 @@ refs.button.addEventListener('click', () => {
                 return additionalItemsTemplate(hit);
             }).join('');
 
-            // const addGalleryMarkup = galleryItemsTemplate(hits);
             refs.gallery.insertAdjacentHTML('beforeend', addGalleryMarkup);
             
             let element = document.querySelector('.special');
@@ -72,5 +72,6 @@ refs.button.addEventListener('click', () => {
             element.classList.remove('special');
         }
         )
-});
+}
+
 
