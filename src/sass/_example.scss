@@ -47,5 +47,21 @@ body {
   margin-bottom: 20px;
 }
 .modal-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.submit-button {
+  cursor: pointer;
+}
+.scroll-btn {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  border-radius: 50%;
   cursor: pointer;
 }

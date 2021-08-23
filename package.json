@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "gh-pages": "^3.2.3",
-    "lodash": "^4.17.21",
-    "material-design-icons": "^3.0.1"
+    "material-design-icons": "^3.0.1",
+    "pnotify": "^5.2.0"
   }
 }
